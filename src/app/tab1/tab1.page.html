@@ -1,17 +1,40 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Tab 1
+      About Me
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="main-body" [fullscreen]="true">
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <ion-card>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size-md="4" size="12">
+              <ion-img [src]="photo"></ion-img>
+            </ion-col>
+            <ion-col size-md="8" size="12">
+              <p>Hello! My name is Charlie and I am a front end web developer based in Denver. I graduated from
+                University of Denver bootcamp in 2019, and have been working as a front end developer since 2020.</p>
+              <br>
+              <p>I’ve been working primarily with Ionic and Angular, which has been super interesting. My bootcamp
+                focused on React, so I was a little familiar with the power of frameworks, but digging into Ionic and
+                Capacitor has been really eye opening. I’m loving all of the native functionality that is so readily
+                available in a language that makes sense to me.</p>
+              <br>
+              <p> In addition to writing code, I’m a new father. My son Rennie was born in August, and it’s been really
+                fun getting to know him! Before enrolling in the bootcamp, I was a professional brewer for a couple
+                pretty well known Denver area breweries. I still homebrew, and I love to check out all of the awesome
+                breweries around town with Rennie and my wife. We are also avid golfers, and have recently taken up
+                curling.</p>
+              <br>
+              <p>Check out some of my extracurricular coding projects <a (click)="linkClicked()">here</a></p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+
 </ion-content>

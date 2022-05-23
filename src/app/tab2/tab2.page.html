@@ -1,17 +1,41 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Tab 2
+      Portfolio
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<ion-content class="main-body" [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-text>My life has been pretty busy being a new dad, so I haven't had as much time to work on projects
+          outside of work as I would like. I have several projects here from bootcamp, as well as a couple that I worked
+          on after finishing the bootcamp, before I landed a job.</ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let project of projects" size="12" size-lg="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{ project.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="12" size-lg="2">
+                  <ion-img [src]="project.img"></ion-img>
+                </ion-col>
+                <ion-col size-lg="10" size="12">
+                  <ion-text>{{ project.description }}  You can <a [href]="project.link" target="_blank">Check it out here.</a>  You can view the code <a [href]="project.gitSrc" target="_blank">here</a></ion-text>
+                  <p></p>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
